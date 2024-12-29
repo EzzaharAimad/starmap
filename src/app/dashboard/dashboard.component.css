@@ -1,0 +1,117 @@
+/* Root Variables for Light and Dark Modes */
+:root {
+  --bg-light: #ffffff;
+  --text-light: #000000;
+  --square-bg-light: #ffffff;
+  --square-text-light: #000000;
+  --square-border-light: #dddddd;
+  --footer-bg-light: #f1f1f1;
+  --footer-text-light: #000000;
+}
+
+body.dark-mode {
+  --bg-dark: #121212;
+  --text-dark: #ffffff;
+  --square-bg-dark: #2e2e2e;
+  --square-text-dark: #ffffff;
+  --square-border-dark: #444444;
+  --footer-bg-dark: #333333;
+  --footer-text-dark: #ffffff;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* City info and map columns */
+  grid-template-rows: auto 1fr auto; /* Top, main, and bottom rows */
+  gap: 0.5rem;
+  grid-template-areas:
+    "city-info map"
+    "city-info map"
+    "additional-info additional-info";
+  padding: 1rem;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-bottom: 4rem; /* Space for footer */
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .dashboard-container {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* City Information Square */
+.city-info {
+  grid-area: city-info;
+  background-color: var(--square-bg);
+  color: var(--square-text-light);
+  border: 1px solid var(--square-border-light);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .city-info {
+  background-color: var(--square-bg-dark);
+  color: var(--square-text-dark);
+  border-color: var(--square-border-dark);
+}
+
+/* Map Component */
+app-map {
+  grid-area: map;
+  height: 400px;
+  width: 100%;
+}
+
+/* Additional Info Section */
+.additional-info {
+  grid-area: additional-info;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-square {
+  background-color: var(--square-bg);
+  color: var(--square-text-light);
+  border: 1px solid var(--square-border-light);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 150px;
+  flex: 1;
+  max-width: 200px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin-bottom: 2rem; /* Add bottom margin to prevent sticking to footer */
+}
+
+body.dark-mode .info-square {
+  background-color: var(--square-bg-dark);
+  color: var(--square-text-dark);
+  border-color: var(--square-border-dark);
+}
+
+/* Footer Styling */
+.footer {
+  background-color: var(--footer-bg-light);
+  color: var(--footer-text-light);
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .footer {
+  background-color: var(--footer-bg-dark);
+  color: var(--footer-text-dark);
+}

@@ -1,0 +1,8 @@
+<header class="header">
+  <img src="assets\logo.png" alt="StarMap Logo" class="logo" />
+  <h1>StarMap</h1>
+  <button (click)="toggleTheme()" class="theme-toggle">
+    <span *ngIf="isDarkMode">🌙</span>
+    <span *ngIf="!isDarkMode">🌞</span>
+  </button>
+</header>

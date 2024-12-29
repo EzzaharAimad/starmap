@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+}
+
+.logo {
+  height: 40px; /* Adjust size as needed */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--header-text);
+}
+
+.theme-toggle:focus {
+  outline: none;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --header-bg: #333;
+  --header-text: #fff;
+}
+
+body:not(.dark-mode) {
+  --header-bg: #fff;
+  --header-text: #000;
+}

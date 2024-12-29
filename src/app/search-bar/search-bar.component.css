@@ -1,0 +1,60 @@
+.search-container {
+  display: flex;
+  justify-content: space-between; /* Align items */
+  margin: 20px auto; /* Center it */
+  width: calc(
+    82% - 40px
+  ); /* Adjust this value based on your container's padding/margins */
+}
+
+input[type="text"] {
+  flex: 1; /* Allow the input to grow and take available space */
+  padding: 8px;
+  border: 1px solid var(--square-border-light); /* Use CSS variable for border color */
+  border-radius: 8px; /* Rounded corners */
+  margin-right: 10px; /* Margin between input and button */
+  background-color: var(
+    --square-bg-light
+  ); /* Background color for light mode */
+  color: var(--square-text-light); /* Text color for light mode */
+}
+
+body.dark-mode input[type="text"] {
+  background-color: var(--square-bg-dark); /* Background color for dark mode */
+  color: var(--square-text-dark); /* Text color for dark mode (white) */
+}
+
+body.dark-mode input[type="text"]::placeholder {
+  color: var(--square-text-dark); /* Placeholder color for dark mode */
+}
+
+.city-list {
+  margin-top: 10px; /* Add space between search and list */
+}
+
+.city-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.city-list li {
+  padding: 10px;
+  border-bottom: 1px solid var(--square-border-light); /* Use CSS variable for border color */
+  cursor: pointer;
+  border-radius: 8px; /* Rounded corners for list items */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for both background and text colors */
+  color: var(--square-text-light); /* Set text color for light mode */
+}
+
+.city-list li:hover {
+  background-color: #f0f0f0; /* Light mode hover effect */
+}
+
+body.dark-mode .city-list li {
+  color: var(--square-text-dark); /* Set text color for dark mode */
+}
+
+body.dark-mode .city-list li:hover {
+  background-color: #333; /* Darker hover effect for dark mode */
+  color: #ffffff; /* Change text color to white on hover */
+}

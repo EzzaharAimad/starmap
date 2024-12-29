@@ -1,0 +1,31 @@
+/* Footer Styling */
+.footer {
+  background-color: var(--square-bg);
+  color: var(--square-text);
+  padding: 0.5rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Footer Styling */
+body.dark-mode .footer {
+  background-color: var(--square-bg-dark);
+  color: var(--square-text-dark);
+}
+
+/* Define variables in dashboard.css or another main CSS file */
+:root {
+  --square-bg: #ffffff;
+  --square-text: #000000;
+  --square-border: #dddddd;
+}
+
+body.dark-mode {
+  --square-bg-dark: #2e2e2e;
+  --square-text-dark: #ffffff;
+  --square-border-dark: #444444;
+}

@@ -1,0 +1,19 @@
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="onSearch()"
+    placeholder="Search for a city..."
+  />
+</div>
+
+<div *ngIf="showSuggestions && cities.length > 0" class="city-list">
+  <ul>
+    <li *ngFor="let city of cities" (click)="selectCity(city)">
+      {{ city.name }}, {{ city.state ? city.state + "," : "" }}
+      {{ city.country }}
+    </li>
+  </ul>
+</div>
+
+<app-dashboard *ngIf="selectedCity" [city]="selectedCity"></app-dashboard>
